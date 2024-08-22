@@ -17,7 +17,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { userReducer } from "@/features/user";
 import { countryReducer } from "@/features/country";
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   user: userReducer,
   country: countryReducer,
 });
