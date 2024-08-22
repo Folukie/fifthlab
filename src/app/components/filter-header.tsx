@@ -48,8 +48,9 @@ const FilterHeader = ({
           <select
             name="country"
             id="country"
-            className="h-14 w-full md:w-44 pl-5 rounded-full text-lg placeholder:text-[#3f4350] focus:outline-none bg-[#E8E8F1]"
+            className="bg-gray-200 h-14 outline-none max-w-full md:w-44 px-4 text-sm text-gray-500 rounded-full appearance-none pr-10"
             onChange={filterByNationality}
+           
           >
             {countries?.map((item: any, idx: Key | null | undefined) => {
               const {
@@ -63,6 +64,7 @@ const FilterHeader = ({
               )
             })}
           </select>
+
           <ToggleButton />
         </div>
       </div>

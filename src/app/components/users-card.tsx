@@ -22,6 +22,7 @@ const UsersCard: React.FC<Props> = ({
     name: { first, last },
     location: {
       street: { name, number },
+      country,
     },
     picture: { large },
     email,
@@ -35,13 +36,10 @@ const UsersCard: React.FC<Props> = ({
   if (pageStep !== 0) {
     return null
   }
-  console.log(item, "item")
+  console.log(item, 'item')
 
   return (
-    
-
     <section className="bg-white w-full px-6 py-10 rounded-xl shadow-xl my-10">
-
       <div className="flex  space-x-3 flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between">
         <Image
           src={large}
@@ -50,23 +48,23 @@ const UsersCard: React.FC<Props> = ({
           alt={`${first} ${last}`}
           className="rounded-full border-8 border-[#74D6D0]"
         />
-        <div className="flex flex-col items-center lg:items-start space-y-4 ">
+        <div className="flex flex-col items-center lg:items-start space-y-4 w-full ">
           <div>
             <h3 className="text-xl font-bold">
               {first} {last}
             </h3>
             <p className=" text-lg font-light italic">
               {number}, {name}
-              {toggleStatus && <span>, Nigeria</span>}
+              {toggleStatus && <span>, {country}</span>}
             </p>
           </div>
-          <div className="flex d:flex-row flex-col justify-center items-center w-full gap-3 lg:gap-0">
-            <p className="flex items-center mr-5 text-sm">
-              <MdOutlineMailOutline className="mr-2" />
+          <div className="flex md:flex-row flex-col w-full space-x-0 md:space-x-3 gap-3 lg:gap-0">
+            <p className="flex items-center text-sm">
+              <MdOutlineMailOutline size={20} className="mr-2" />
               {email}
             </p>
             <p className="flex items-center text-sm">
-              <MdOutlinePhoneInTalk className="mr-2" />
+              <MdOutlinePhoneInTalk size={20} className="mr-2" />
               {cell}
             </p>
           </div>
